@@ -40,7 +40,7 @@ app.route("/", RestaurantRouter)
 app.route("/", RestaurantOwnerRouter)
 app.route("/", stateRouter)
 app.route("/", StatusCatalogRouter)
-app.route("/", authRouter)
+app.route("auth/", authRouter)
 app.route("/", authupdateRouter)
 
 

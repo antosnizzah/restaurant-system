@@ -34,7 +34,8 @@ export const userLoginService = async (user: TSAuthorizeUsers) => {
             username: true,
             role: true,
             password: true
-        }, where: sql` ${AuthorizeUsersTable.username} = ${username}`,
+        },
+        where: sql`${AuthorizeUsersTable.username} = ${username}`,
         with: {
             user: {
                 columns: {
@@ -45,5 +46,5 @@ export const userLoginService = async (user: TSAuthorizeUsers) => {
                 }
             }
         }
-    })
-}
+    });
+};

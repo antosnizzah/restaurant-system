@@ -20,7 +20,7 @@ Content-Type: application/json
 
 # create something new
 ###
-PUT   http://localhost:3000/update/auth/4
+POST   http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
@@ -48,5 +48,11 @@ Content-Type: application/json
     "password": "5hg@z3"
   }
 
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
 
-```
+{
+    "username": "patrty",
+    "password": "pass"
+}
