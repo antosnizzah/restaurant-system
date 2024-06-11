@@ -1,0 +1,52 @@
+
+
+# get by id
+###
+GET http://localhost:3000/status_catalog/3
+
+# get all
+###
+GET http://localhost:3000/user
+
+# udate anything
+###
+PUT http://localhost:3000/city/2
+Content-Type: application/json
+
+{   "id": 2,
+    "name": "mathare",
+    "state_id": 1
+}
+
+# create something new
+###
+PUT   http://localhost:3000/update/auth/4
+Content-Type: application/json
+
+{
+    "id":5,
+    "username": "patrty",
+    "user_id": 5,
+   
+    "password": "pass"
+  }
+
+# delete something
+###
+
+DELETE http://localhost:3000/city/2
+Content-Type: application/json
+
+ {
+    "id": 1,
+    "name": "antony",
+    "contact_phone": "+2547993658",
+    "phone_verified": true,
+    "email": "antony@gmail.com",
+    "email_verified": true,
+    "confirmation_code": "2345g",
+    "password": "5hg@z3"
+  }
+
+
+```
