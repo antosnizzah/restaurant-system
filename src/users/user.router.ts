@@ -1,11 +1,12 @@
 import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
 import { userSchema } from "../validators";
+import { adminRoleAuth,adminRoleAuthenticate,userRoleAuth,adminuserAuth } from "../middleware/bearAuth";
 import { getUsersController, getUsersByIdController, createUsersController, deleteUsersController, updateUsersController } from "./user.controller";
 
 export const userRouter = new Hono();
 
-userRouter.get("/user", getUsersController);
+userRouter.get("/user", adminuserAuth,getUsersController);
 
 userRouter.get("/user/:id", getUsersByIdController);
 

@@ -1,5 +1,5 @@
 {
-  "id": "2b4a6bc2-0dca-4021-a765-6e743149f51b",
+  "id": "74484e12-eb80-44f7-8624-e63b3184b45c",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -72,6 +72,62 @@
           "tableTo": "city",
           "columnsFrom": [
             "city_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "public.authorizeusers": {
+      "name": "authorizeusers",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "password": {
+          "name": "password",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "username": {
+          "name": "username",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "role",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'user'"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "authorizeusers_user_id_users_id_fk": {
+          "name": "authorizeusers_user_id_users_id_fk",
+          "tableFrom": "authorizeusers",
+          "tableTo": "users",
+          "columnsFrom": [
+            "user_id"
           ],
           "columnsTo": [
             "id"
@@ -870,7 +926,19 @@
       }
     }
   },
-  "enums": {},
+  "enums": {
+    "public.role": {
+      "name": "role",
+      "schema": "public",
+      "values": [
+        "user",
+        "admin",
+        "Driver",
+        "super admin",
+        "RestaurantOwner"
+      ]
+    }
+  },
   "schemas": {},
   "_meta": {
     "columns": {},

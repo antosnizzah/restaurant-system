@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1717958261919,
-      "tag": "0000_colossal_mandroid",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1718020524713,
-      "tag": "0001_perpetual_medusa",
+      "when": 1718195493026,
+      "tag": "0000_nappy_absorbing_man",
       "breakpoints": true
     }
   ]

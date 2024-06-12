@@ -15,7 +15,7 @@ export const UsersTable = pgTable("users", {
     // created_at: timestamp("created_at").notNull().defaultNow(),
     // updated_at: timestamp("updated_at").notNull(),
 });
-export const roleEnum = pgEnum("role",["user", "admin", ]);
+export const roleEnum = pgEnum("role",["user", "admin","Driver","super admin","RestaurantOwner"]);
 export const AuthorizeUsersTable = pgTable("authorizeusers", {
     id: serial("id").primaryKey(),
     user_id: integer("user_id").notNull().references(() => UsersTable.id, { onDelete: "cascade" }),

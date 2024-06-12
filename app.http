@@ -1,21 +1,19 @@
-
-
+GET http://localhost:3000/city
+###
 # get by id
 ###
-GET http://localhost:3000/status_catalog/3
-
-# get all
+GET  http://localhost:3000/state
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW50b2hnIiwicm9sZSI6InVzZXIiLCJleHBpcmUiOjE3MTgxOTk0MjN9.m4hEb1H_ipQA1FZBUFj0V91c-NSoiIyvvKEX2vU9M9U
 ###
-GET http://localhost:3000/user
-
-# udate anything
+GET http://localhost:3000/address
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgxOTczMjJ9.mQ22TbP_oReS6tJ3g39tZqMBG6q8C_NboWgzk6sQzNU
 ###
-PUT http://localhost:3000/city/2
+PUT http://localhost:3000/state
 Content-Type: application/json
 
 {   "id": 2,
     "name": "mathare",
-    "state_id": 1
+    "state_id": 2
 }
 
 # create something new
@@ -24,10 +22,11 @@ POST   http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "id":5,
-    "username": "patrty",
-    "user_id": 5,
    
+    "username": "pinchez",
+    "user_id": 8,
+     "role": "Driver",
+
     "password": "pass"
   }
 
@@ -48,11 +47,44 @@ Content-Type: application/json
     "password": "5hg@z3"
   }
 
+#admin
 ###
 POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "username": "patrty",
+    "username": "davie",
     "password": "pass"
 }
+
+#user
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "antohg",
+    "password": "pass"
+}
+
+###restaurant owner
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "turoo",
+    "password": "pass"
+}
+
+###driver
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "pinchez",
+    "password": "pass"
+}
+
+###
