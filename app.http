@@ -1,3 +1,8 @@
+###
+GET http://localhost:3000
+
+
+
 GET http://localhost:3000/city
 ###
 # get by id
@@ -6,14 +11,17 @@ GET  http://localhost:3000/state
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW50b2hnIiwicm9sZSI6InVzZXIiLCJleHBpcmUiOjE3MTgxOTk0MjN9.m4hEb1H_ipQA1FZBUFj0V91c-NSoiIyvvKEX2vU9M9U
 ###
 GET http://localhost:3000/address
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgxOTczMjJ9.mQ22TbP_oReS6tJ3g39tZqMBG6q8C_NboWgzk6sQzNU
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgyMDEyMDl9.0u_zbPZLD59QesfJrD60PbjfO8v7ZoGs2uTNUGXZmUY
 ###
-PUT http://localhost:3000/state
+PUT http://localhost:3000/state/2
+ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgyMDA1MTN9.T7NisJziXqgcYCW3KQcVYvbLNVTY8tp3LBWEs5BEA_w
 Content-Type: application/json
 
-{   "id": 2,
-    "name": "mathare",
-    "state_id": 2
+{   
+      
+    "id": 3,
+    "name": "kiambu"
+  
 }
 
 # create something new

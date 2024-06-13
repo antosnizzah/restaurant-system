@@ -7,11 +7,11 @@ import { rerstaurantRoleAuthenticate } from '../middleware/bearAuth';
 
 AddressRouter.get("/address", getAddressesController);
 
-AddressRouter.get("/address/:id", getAddressByIdController);
+AddressRouter.get("/address/:id",getAddressByIdController);
 
-AddressRouter.post("/address", createAddressController);
+AddressRouter.post("/address",adminRoleAuth, createAddressController);
 
-AddressRouter.put("/address/:id", updateAddressController);
+AddressRouter.put("/address/:id", adminRoleAuth,updateAddressController);
 
-AddressRouter.delete("/address/:id", deleteAddressController);
+AddressRouter.delete("/address/:id",adminRoleAuth, deleteAddressController);
 

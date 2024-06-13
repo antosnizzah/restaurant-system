@@ -1,5 +1,6 @@
 import { serve } from '@hono/node-server'
-import { Hono } from 'hono'
+import { Context, Hono } from 'hono'
+
 import dotenv from 'dotenv/config';
 import{ userRouter } from './users/user.router'
 import { stateRouter } from './state/state.router';
@@ -20,6 +21,9 @@ import { authRouter, authupdateRouter } from './auth/auth.router';
 
 const app = new Hono();
 
+app.get("/", (c) => {
+  return c.text("Hello Hono!");
+});
 
 
 app.notFound((c) => {
