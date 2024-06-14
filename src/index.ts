@@ -17,6 +17,7 @@ import { RestaurantRouter } from './restaurant/restaurant.router';
 import { RestaurantOwnerRouter } from './restaurant_owner/restaurant_owner.router';
 import { StatusCatalogRouter } from './status_catalog/status_catalog.router';
 import { authRouter, authupdateRouter } from './auth/auth.router';
+import assert from 'assert';
 
 
 const app = new Hono();
@@ -48,12 +49,12 @@ app.route("auth/", authRouter)
 app.route("/", authupdateRouter)
 
 
-const port = 3000
-console.log(`Server is running on port ${port}`)
+assert(process.env.PORT, "PORT is not set in the .env file")
 
 serve({
   fetch: app.fetch,
-  port: port
+  port: Number(process.env.PORT )
 })
+console.log(`Server is running on port ${process.env.PORT} 📢`)
 
 

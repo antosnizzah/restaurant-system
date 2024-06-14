@@ -1,20 +1,20 @@
 ###
-GET http://localhost:3000/user
+GET http://localhost:8000/user
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgyNzU4Mjd9.3-yhyWk7OQ1RBuVktqja2XQ8F2j9njVXIJPqVHzOnXI
 
 ###
 
-GET http://localhost:3000/city/2
+GET http://localhost:8000/city/2
 ###
 # get by id
 ###
-GET  http://localhost:3000/state
+GET  http://localhost:8000/state
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW50b2hnIiwicm9sZSI6InVzZXIiLCJleHBpcmUiOjE3MTgxOTk0MjN9.m4hEb1H_ipQA1FZBUFj0V91c-NSoiIyvvKEX2vU9M9U
 ###
-GET http://localhost:3000/address
+GET http://localhost:8000/address
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgyMDEyMDl9.0u_zbPZLD59QesfJrD60PbjfO8v7ZoGs2uTNUGXZmUY
 ###
-PUT http://localhost:3000/state/2
+PUT http://localhost:8000/state/2
  Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgyMDA1MTN9.T7NisJziXqgcYCW3KQcVYvbLNVTY8tp3LBWEs5BEA_w
 Content-Type: application/json
 
@@ -27,7 +27,7 @@ Content-Type: application/json
 
 # create something new
 ###
-POST   http://localhost:3000/auth/register
+POST   http://localhost:8000/auth/register
 Content-Type: application/json
 
 {
@@ -42,7 +42,7 @@ Content-Type: application/json
 # delete something
 ###
 
-DELETE http://localhost:3000/city/2
+DELETE http://localhost:8000/city/2
 Content-Type: application/json
 
  {
@@ -58,7 +58,7 @@ Content-Type: application/json
 
 #admin
 ###
-POST http://localhost:3000/auth/login
+POST http://localhost:8000/auth/login
 Content-Type: application/json
 
 {
@@ -69,7 +69,7 @@ Content-Type: application/json
 #user
 ###
 
-POST http://localhost:3000/auth/login
+POST http://localhost:8000/auth/login
 Content-Type: application/json
 
 {
@@ -78,7 +78,7 @@ Content-Type: application/json
 }
 
 ###restaurant owner
-POST http://localhost:3000/auth/login
+POST http://localhost:8000/auth/login
 Content-Type: application/json
 
 {
@@ -88,7 +88,7 @@ Content-Type: application/json
 
 
 ###driver
-POST http://localhost:3000/auth/login
+POST http://localhost:8000/auth/login
 Content-Type: application/json
 
 {
@@ -97,4 +97,4 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/user/5/comments
+GET http://localhost:8000/user/5/comments
