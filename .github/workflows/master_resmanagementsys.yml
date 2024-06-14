@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - restaurantsysterm
+name: Build and deploy Node.js app to Azure Web App - resmanagementsys
 
 on:
   push:
@@ -57,15 +57,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4E248759D6D74D3CB17FC8D589459D35 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_924D1FCD631E4DE29BC381D0AA0DD89D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F553D5BC028F437CB133F24FB9F7BDC2 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_0B64107731C2448F86C923F742E403C8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_517381AD6947470584CF3F5D40FE2A92 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E8C716C1E4BB4337AA9BE0BCCBB60E2E }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'restaurantsysterm'
+          app-name: 'resmanagementsys'
           slot-name: 'Production'
           package: .
           
