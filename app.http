@@ -1,9 +1,10 @@
 ###
-GET http://localhost:3000
+GET http://localhost:3000/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF2aWUiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmUiOjE3MTgyNzU4Mjd9.3-yhyWk7OQ1RBuVktqja2XQ8F2j9njVXIJPqVHzOnXI
 
+###
 
-
-GET http://localhost:3000/city
+GET http://localhost:3000/city/2
 ###
 # get by id
 ###
@@ -85,8 +86,8 @@ Content-Type: application/json
     "password": "pass"
 }
 
-###driver
 
+###driver
 POST http://localhost:3000/auth/login
 Content-Type: application/json
 
@@ -96,3 +97,4 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:3000/user/5/comments

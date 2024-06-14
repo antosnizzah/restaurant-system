@@ -1,13 +1,17 @@
 import { Context } from "hono";
 
-import {getUsersByIdService,getUsersService,createUsersService,deleteUsersService,updateUsersService  } from "./user.service";
+import {getUsersByIdService,getUserComments,getUsersService,createUsersService,deleteUsersService,updateUsersService  } from "./user.service";
 
 
 
 // get all Users
 export const getUsersController = async (c: Context) => {
     try {
-        const Users = await getUsersService();
+        const limit = parseInt(c.req.query("limit") || "5");
+        if (isNaN(limit) || limit <= 0) {
+            return c.text("Invalid limit", 400);
+        }
+        const Users = await getUsersService(limit);
         if (Users == null || Users.length == 0) {
             return c.text("No Users found", 404);
         }
@@ -56,7 +60,7 @@ export const updateUsersController = async (c: Context) => {
 
         // search for  Users  by id
         const updatedUsers = await getUsersByIdService(id);
-        if (!updatedUsers=== undefined) return c.text("User  not found", 404);
+        // if (!updatedUsers=== undefined) return c.text("User  not found", 404);
 
         // get data to Users
         const res = await updateUsersService(id, Users);
@@ -74,12 +78,21 @@ export const deleteUsersController = async (c: Context) => {
     try {
         // search for Users by id
         const Users = await getUsersByIdService(id);
-        if (!Users) return c.text("Users not found", 404);
+        // if (!Users) return c.text("Users not found", 404);
 
         // delete order 
         const res = await deleteUsersService(id);
         return c.json({ message: res }, 200);
     } catch (error: any) {
         return c.json({ error: error?.message }, 500);
+    }
+};
+export const handleGetUserComments = async (c: Context) => {
+    try {
+        const userId = parseInt(c.req.param('userId'));
+        const comments = await getUserComments(userId);
+        return c.json(comments, 200);
+    } catch (error) {
+        
     }
 };

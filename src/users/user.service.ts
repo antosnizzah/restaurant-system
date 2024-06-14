@@ -1,22 +1,30 @@
 import db from "../drizzle/db";
 import { UsersTable ,TIUser ,TSUser} from "../drizzle/schema";
+import { CommentTable } from "../drizzle/schema";
 
 import { eq } from "drizzle-orm"; 
 
 
 
-// GET ALL Users 
-export const getUsersService = async (): Promise<TSUser[] | null> => {
-    const Users = await db.query.UsersTable.findMany();
+// GET ALL Users with a limit
+export const getUsersService = async (limit: number): Promise<TSUser[] | null> => {
+    const Users = await db.query.UsersTable.findMany({
+        limit: limit
+    });
     return Users;
 };
 
+
 // GET Users BY ID
-export const getUsersByIdService = async (id: number): Promise<TSUser| undefined> => {
+export const getUsersByIdService = async (id: number) => {
     const Users = await db.query.UsersTable.findFirst({
-        where: eq(UsersTable.id, id)
+        where: eq(UsersTable.id, id),
+        columns:{
+            name: true,
+            contact_phone: true,
+            email: true
+        }
     });
-    return Users;
 }
 
 // CREATE Users
@@ -37,3 +45,13 @@ export const deleteUsersService = async (id: number) => {
     return "User  deleted successfully";
 }
 
+// user getting his/her comment
+export const getUserComments = async (userId: number) => {
+    const userComments = await db
+        .select()
+        .from(CommentTable)
+        .where(eq(CommentTable.user_id, userId))
+        .execute();
+    
+    return userComments;
+};
